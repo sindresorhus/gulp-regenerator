@@ -2,7 +2,7 @@
 
 > Transpile ES6 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
 
-*Issues with the output should be reported on the [Regenerator issue tracker](https://github.com/facebook/regenerator/issues).*
+*Issues with the output should be reported on the Regenerator [issue tracker](https://github.com/facebook/regenerator/issues).*
 
 
 ## Install
@@ -23,7 +23,7 @@ var regenerator = require('gulp-regenerator');
 gulp.task('default', function () {
 	gulp.src('src/app.js')
 		.pipe(regenerator())
-		.pipe(gulp.dest('dist/app.js'));
+		.pipe(gulp.dest('dist'));
 });
 ```
 
