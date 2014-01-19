@@ -12,5 +12,7 @@ it('should transpile with Regenerator', function (cb) {
 		cb();
 	});
 
-	stream.write(new gutil.File({contents: fs.readFileSync('fixture.js')}));
+	stream.write(new gutil.File({
+		contents: fs.readFileSync('fixture.js')
+	}));
 });
