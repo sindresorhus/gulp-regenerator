@@ -1,4 +1,4 @@
-# [gulp](https://github.com/wearefractal/gulp)-regenerator [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-regenerator.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-regenerator)
+# [gulp](http://gulpjs.com)-regenerator [![Build Status](https://travis-ci.org/sindresorhus/gulp-regenerator.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-regenerator)
 
 > Transpile ES6 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
 
@@ -7,14 +7,12 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-regenerator)
-
-```
-npm install --save-dev gulp-regenerator
+```bash
+$ npm install --save-dev gulp-regenerator
 ```
 
 
-## Example
+## Usage
 
 ```js
 var gulp = require('gulp');
@@ -42,4 +40,4 @@ Default: `false`
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
