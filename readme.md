@@ -19,7 +19,7 @@ var gulp = require('gulp');
 var regenerator = require('gulp-regenerator');
 
 gulp.task('default', function () {
-	gulp.src('src/app.js')
+	return gulp.src('src/app.js')
 		.pipe(regenerator())
 		.pipe(gulp.dest('dist'));
 });
