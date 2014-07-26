@@ -18,7 +18,7 @@ module.exports = function (options) {
 		try {
 			file.contents = new Buffer(regenerator(file.contents.toString(), options));
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-regenerator', err));
+			this.emit('error', new gutil.PluginError('gulp-regenerator', err, {fileName: file.path}));
 		}
 
 		this.push(file);
