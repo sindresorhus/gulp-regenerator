@@ -2,7 +2,7 @@
 var assert = require('assert');
 var fs = require('fs');
 var gutil = require('gulp-util');
-var regenerator = require('./index');
+var regenerator = require('./');
 
 it('should transpile with Regenerator', function (cb) {
 	var stream = regenerator();

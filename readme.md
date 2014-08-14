@@ -7,7 +7,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev gulp-regenerator
 ```
 
@@ -32,7 +32,7 @@ gulp.task('default', function () {
 
 #### options.includeRuntime
 
-Type: `Boolean`  
+Type: `boolean`  
 Default: `false`
 
 > A small runtime library (less than 1KB compressed) is required to provide the wrapGenerator function. You can install it either as a CommonJS module or as a standalone .js file, whichever you prefer.
@@ -40,4 +40,4 @@ Default: `false`
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
