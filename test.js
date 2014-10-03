@@ -8,7 +8,7 @@ it('should transpile with Regenerator', function (cb) {
 	var stream = regenerator();
 
 	stream.on('data', function (data) {
-		assert(/wrapGenerator/.test(data.contents.toString()));
+		assert(/regeneratorRuntime.mark/.test(data.contents.toString()));
 		cb();
 	});
 

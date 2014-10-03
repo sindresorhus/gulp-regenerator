@@ -16,10 +16,12 @@ module.exports = function (options) {
 		}
 
 		try {
-			file.contents = new Buffer(regenerator(file.contents.toString(), options));
-			cb(null, file);
+			file.contents = new Buffer(regenerator.compile(file.contents.toString(), options).code);
+			this.push(file);
 		} catch (err) {
-			cb(new gutil.PluginError('gulp-regenerator', err, {fileName: file.path}));
+			this.emit('error', new gutil.PluginError('gulp-regenerator', err, {fileName: file.path}));
 		}
+
+		cb();
 	});
 };
