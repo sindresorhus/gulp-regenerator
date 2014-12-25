@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "regenerator": "^0.7.3",
+    "regenerator": "^0.8.2",
     "through2": "^0.6.1"
   },
   "devDependencies": {
