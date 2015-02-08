@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com)-regenerator [![Build Status](https://travis-ci.org/sindresorhus/gulp-regenerator.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-regenerator)
+# gulp-regenerator [![Build Status](https://travis-ci.org/sindresorhus/gulp-regenerator.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-regenerator)
 
 > Transpile ES6 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
 
@@ -7,7 +7,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save-dev gulp-regenerator
 ```
 
