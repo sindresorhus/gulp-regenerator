@@ -35,10 +35,13 @@
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
+    "recast": "^0.10.0",
     "regenerator": "^0.8.2",
-    "through2": "^0.6.1"
+    "through2": "^0.6.1",
+    "vinyl-sourcemaps-apply": "^0.1.4"
   },
   "devDependencies": {
+    "gulp-sourcemaps": "*",
     "mocha": "*"
   }
 }
