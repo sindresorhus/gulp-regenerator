@@ -38,6 +38,25 @@ Default: `false`
 > A small runtime library (less than 1KB compressed) is required to provide the wrapGenerator function. You can install it either as a CommonJS module or as a standalone .js file, whichever you prefer.
 
 
+## Source Maps
+
+Use [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) like this:
+
+```js
+var gulp = require('gulp');
+var sourcemaps = require('gulp-sourcemaps');
+var regenerator = require('gulp-regenerator');
+
+gulp.task('default', function () {
+	return gulp.src('src/app.js')
+		.pipe(sourcemaps.init())
+		.pipe(regenerator())
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('dist'));
+});
+```
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
