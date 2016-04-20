@@ -1,6 +1,6 @@
 # gulp-regenerator [![Build Status](https://travis-ci.org/sindresorhus/gulp-regenerator.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-regenerator)
 
-> Transpile ES6 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
+> Transpile ES2015 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
 
 *Issues with the output should be reported on the Regenerator [issue tracker](https://github.com/facebook/regenerator/issues).*
 

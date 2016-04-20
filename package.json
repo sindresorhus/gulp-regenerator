@@ -1,7 +1,7 @@
 {
   "name": "gulp-regenerator",
   "version": "4.0.0",
-  "description": "Transpile ES6 generator functions to ES5",
+  "description": "Transpile ES2015 generator functions to ES5",
   "license": "MIT",
   "repository": "sindresorhus/gulp-regenerator",
   "author": {
@@ -31,7 +31,7 @@
     "refactoring",
     "transpiler",
     "desugaring",
-    "es6"
+    "es2015"
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
