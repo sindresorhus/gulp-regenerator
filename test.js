@@ -1,46 +1,45 @@
+/* eslint-env mocha */
 'use strict';
-var assert = require('assert');
-var fs = require('fs');
-var gutil = require('gulp-util');
-var sourceMaps = require('gulp-sourcemaps');
-var regenerator = require('./');
+const assert = require('assert');
+const fs = require('fs');
+const sourceMaps = require('gulp-sourcemaps');
+const Vinyl = require('vinyl');
+const regenerator = require('.');
 
-it('should transpile with Regenerator', function (cb) {
-	var stream = regenerator();
+it('should transpile with Regenerator', cb => {
+	const stream = regenerator();
 
-	stream.on('data', function (data) {
+	stream.on('data', data => {
 		assert(/regeneratorRuntime.mark/.test(data.contents.toString()));
 		cb();
 	});
 
-	stream.write(new gutil.File({
+	stream.end(new Vinyl({
 		contents: fs.readFileSync('fixture.js')
 	}));
 });
 
-it('should generate source maps', function (cb) {
-	var init = sourceMaps.init();
-	var write = sourceMaps.write();
+it('should generate source maps', cb => {
+	const init = sourceMaps.init();
+	const write = sourceMaps.write();
 
 	init
 		.pipe(regenerator())
 		.pipe(write);
 
-	write.on('data', function (file) {
-		var contents = file.contents.toString();
+	write.on('data', file => {
+		const contents = file.contents.toString();
 		assert.equal(file.sourceMap.sources[0], 'fixture.js');
 		assert(/regeneratorRuntime.mark/.test(contents));
-		assert(/sourceMappingURL=data:application\/json;base64/.test(contents));
+		assert(/sourceMappingURL=data:application\/json;charset=utf8;base64/.test(contents));
 		cb();
 	});
 
-	init.write(new gutil.File({
+	init.end(new Vinyl({
 		cwd: __dirname,
 		base: __dirname,
 		path: 'fixture.js',
 		contents: fs.readFileSync('fixture.js'),
 		sourceMap: ''
 	}));
-
-	init.end();
 });

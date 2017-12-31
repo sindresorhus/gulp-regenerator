@@ -1,47 +1,48 @@
 {
-  "name": "gulp-regenerator",
-  "version": "4.0.0",
-  "description": "Transpile ES2015 generator functions to ES5",
-  "license": "MIT",
-  "repository": "sindresorhus/gulp-regenerator",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "gulpplugin",
-    "generator",
-    "yield",
-    "coroutine",
-    "rewriting",
-    "transformation",
-    "syntax",
-    "codegen",
-    "rewriting",
-    "refactoring",
-    "transpiler",
-    "desugaring",
-    "es2015"
-  ],
-  "dependencies": {
-    "gulp-util": "^3.0.0",
-    "recast": "^0.11.0",
-    "regenerator": "^0.8.2",
-    "through2": "^2.0.0",
-    "vinyl-sourcemaps-apply": "^0.2.0"
-  },
-  "devDependencies": {
-    "gulp-sourcemaps": "*",
-    "mocha": "*"
-  }
+	"name": "gulp-regenerator",
+	"version": "4.0.0",
+	"description": "Transpile ES2015 generator functions to ES5",
+	"license": "MIT",
+	"repository": "sindresorhus/gulp-regenerator",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && mocha"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"gulpplugin",
+		"generator",
+		"yield",
+		"coroutine",
+		"rewriting",
+		"transformation",
+		"syntax",
+		"codegen",
+		"refactoring",
+		"transpiler",
+		"desugaring",
+		"es2015"
+	],
+	"dependencies": {
+		"plugin-error": "^0.1.2",
+		"recast": "^0.13.0",
+		"regenerator": "^0.8.2",
+		"safe-buffer": "^5.1.1",
+		"through2": "^2.0.0",
+		"vinyl-sourcemaps-apply": "^0.2.0"
+	},
+	"devDependencies": {
+		"gulp-sourcemaps": "^2.6.2",
+		"mocha": "^4.1.0",
+		"vinyl": "^2.1.0"
+	}
 }

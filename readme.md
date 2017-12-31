@@ -15,24 +15,28 @@ $ npm install --save-dev gulp-regenerator
 ## Usage
 
 ```js
-var gulp = require('gulp');
-var regenerator = require('gulp-regenerator');
+const gulp = require('gulp');
+const regenerator = require('gulp-regenerator');
 
-gulp.task('default', function () {
-	return gulp.src('src/app.js')
+gulp.task('default', () => {
+	gulp.src('src/app.js')
 		.pipe(regenerator())
-		.pipe(gulp.dest('dist'));
-});
+		.pipe(gulp.dest('dist'))
+);
 ```
 
 
 ## API
 
-### regenerator(options)
+### regenerator([options])
 
-#### options.includeRuntime
+#### options
 
-Type: `boolean`  
+Type: `Object`
+
+##### includeRuntime
+
+Type: `boolean`<br>
 Default: `false`
 
 > A small runtime library (less than 1KB compressed) is required to provide the wrapGenerator function. You can install it either as a CommonJS module or as a standalone .js file, whichever you prefer.
@@ -43,20 +47,20 @@ Default: `false`
 Use [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) like this:
 
 ```js
-var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
-var regenerator = require('gulp-regenerator');
+const gulp = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
+const regenerator = require('gulp-regenerator');
 
-gulp.task('default', function () {
-	return gulp.src('src/app.js')
+gulp.task('default', () =>
+	gulp.src('src/app.js')
 		.pipe(sourcemaps.init())
 		.pipe(regenerator())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist'));
-});
+		.pipe(gulp.dest('dist'))
+);
 ```
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

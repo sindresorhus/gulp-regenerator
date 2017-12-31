@@ -1,11 +1,12 @@
 'use strict';
-var gutil = require('gulp-util');
-var through = require('through2');
-var regenerator = require('regenerator');
-var recast = require('recast');
-var applySourceMap = require('vinyl-sourcemaps-apply');
+const through = require('through2');
+const regenerator = require('regenerator');
+const recast = require('recast');
+const applySourceMap = require('vinyl-sourcemaps-apply');
+const PluginError = require('plugin-error');
+const Buffer = require('safe-buffer').Buffer;
 
-module.exports = function (options) {
+module.exports = options => {
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			cb(null, file);
@@ -13,15 +14,15 @@ module.exports = function (options) {
 		}
 
 		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-regenerator', 'Streaming not supported'));
+			cb(new PluginError('gulp-regenerator', 'Streaming not supported'));
 			return;
 		}
 
 		try {
-			var res;
+			let res;
 
 			if (file.sourceMap) {
-				var ast = regenerator.transform(recast.parse(file.contents.toString(), {
+				const ast = regenerator.transform(recast.parse(file.contents.toString(), {
 					sourceFileName: file.relative
 				}), options);
 
@@ -32,7 +33,7 @@ module.exports = function (options) {
 				res = regenerator.compile(file.contents.toString(), options);
 			}
 
-			file.contents = new Buffer(res.code);
+			file.contents = Buffer.from(res.code);
 
 			if (res.map && file.sourceMap) {
 				applySourceMap(file, res.map);
@@ -40,7 +41,7 @@ module.exports = function (options) {
 
 			this.push(file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-regenerator', err, {fileName: file.path}));
+			this.emit('error', new PluginError('gulp-regenerator', err, {fileName: file.path}));
 		}
 
 		cb();
