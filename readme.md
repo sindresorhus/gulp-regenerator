@@ -1,3 +1,9 @@
+# Deprecated
+
+Use Babel instead.
+
+---
+
 # gulp-regenerator [![Build Status](https://travis-ci.org/sindresorhus/gulp-regenerator.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-regenerator)
 
 > Transpile ES2015 generator functions to ES5 with [Regenerator](http://facebook.github.io/regenerator/)
